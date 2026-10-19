@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Style+Script&family=Syncopate:wght@700&family=Syne:wght@700;800&family=Yellowtail&display=swap');
+
 /* ==========================================================================
    TAIKÔ BEACH CLUB - HIGH-END NIGHTLIFE LOUNGE (VITÓRIA, ES)
    Theme: Dark (#080B11, #0A1118) | Champagne Gold (#D5BE9E) | Electric Blue (#0066FF)
-   Aesthetic: Ultra-clean, Flat Accents, No Gradients, No Emojis, No Clutter
+   Aesthetic: Ultra-clean, Flat Accents, No Emojis, No Clutter
+   Typography: Aurora Summit Style (Futuristic Sans + Cursive Script Overlay)
    Fully Responsive (Desktop & Mobile Unified)
    ========================================================================== */
 
@@ -22,6 +25,9 @@
   --accent-blue-active: #0052CC;
   --accent-blue-dim: rgba(0, 102, 255, 0.12);
 
+  --color-amber-gold: #FFAE19;
+  --color-amber-glow: rgba(255, 174, 25, 0.75);
+
   --text-primary: #F8FAFC;
   --text-secondary: #94A3B8;
   --text-muted: #64748B;
@@ -31,6 +37,8 @@
   --border-medium: #1F2D40;
   --border-focus: #0066FF;
 
+  --font-aurora: 'Syncopate', 'Orbitron', 'Syne', -apple-system, sans-serif;
+  --font-script: 'Yellowtail', 'Style Script', 'Great Vibes', cursive;
   --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -273,16 +281,18 @@ button {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION - AURORA SUMMIT TYPOGRAPHY LOCKUP & AESTHETIC
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 82vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: var(--bg-primary);
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle);
+  text-align: center;
 }
 
 .hero-background-media {
@@ -296,7 +306,7 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.60) contrast(1.18);
+  filter: brightness(0.46) contrast(1.24);
 }
 
 .hero-overlay-dark {
@@ -306,27 +316,62 @@ button {
   z-index: 2;
 }
 
-.hero-content {
-  position: relative;
+/* Atmospheric Glows matching reference image (Electric blue sides + warm amber center) */
+.hero-ambient-blue-glow {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 8% 85%, rgba(0, 102, 255, 0.38) 0%, transparent 48%),
+    radial-gradient(circle at 92% 85%, rgba(0, 102, 255, 0.38) 0%, transparent 48%);
   z-index: 3;
-  max-width: 860px;
-  padding: 80px 0;
+  pointer-events: none;
+}
+
+.hero-ambient-warm-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 580px;
+  height: 280px;
+  background: radial-gradient(ellipse at bottom, rgba(255, 174, 25, 0.24) 0%, rgba(255, 140, 0, 0.08) 45%, transparent 72%);
+  z-index: 3;
+  pointer-events: none;
+  filter: blur(25px);
+}
+
+.hero-container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 4;
+}
+
+.hero-content.hero-aurora-content {
+  position: relative;
+  max-width: 1050px;
+  padding: 80px 0 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-badge-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--accent-gold-dim);
-  border: 1px solid var(--accent-gold-border);
-  color: var(--accent-gold);
-  padding: 6px 14px;
+  background-color: rgba(255, 174, 25, 0.1);
+  border: 1px solid rgba(255, 174, 25, 0.3);
+  color: var(--color-amber-gold);
+  padding: 6px 16px;
   border-radius: var(--radius-sm);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .hero-badge-tag::before {
@@ -335,32 +380,129 @@ button {
   height: 6px;
   border-radius: 50%;
   background-color: var(--accent-blue);
+  box-shadow: 0 0 10px var(--accent-blue);
 }
 
-.hero-title {
+/* Master Lockup (Aurora Summit Style) */
+.aurora-lockup-wrapper {
+  position: relative;
+  margin: 10px 0 26px 0;
+  display: inline-block;
+  user-select: none;
+}
+
+.aurora-title-stack {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Base Primary Word ("AURORA" / "TAIKÔ") */
+.aurora-main-word {
+  font-family: var(--font-aurora);
+  font-size: clamp(62px, 13vw, 142px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #FFFFFF;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.95),
+    0 10px 35px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(0, 102, 255, 0.35);
+}
+
+/* Secondary Script Overlay ("Summit" / "Beach Club") */
+.aurora-script-word {
+  position: absolute;
+  left: 50%;
+  bottom: -15%;
+  transform: translateX(-48%) rotate(-5deg);
+  font-family: var(--font-script);
+  font-size: clamp(48px, 9.5vw, 110px);
+  font-weight: 400;
+  color: var(--color-amber-gold);
+  white-space: nowrap;
+  z-index: 3;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.95),
+    0 5px 16px rgba(0, 0, 0, 0.9),
+    0 0 25px rgba(255, 174, 25, 0.85),
+    0 0 55px rgba(255, 174, 25, 0.45);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.95));
+}
+
+/* Golden Starburst / Lens Flare Sparkle */
+.aurora-flare-sparkle {
+  position: absolute;
+  top: 40%;
+  right: 18%;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, rgba(255, 250, 220, 0.98) 0%, rgba(255, 185, 30, 0.75) 25%, rgba(255, 140, 0, 0.25) 50%, transparent 72%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 4;
+  mix-blend-mode: screen;
+  filter: blur(1.5px);
+  animation: flareSparkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes flareSparkle {
+  0% { transform: scale(0.85); opacity: 0.75; }
+  100% { transform: scale(1.22); opacity: 1; }
+}
+
+/* Tagline Group */
+.hero-tagline-group {
+  margin-bottom: 34px;
+}
+
+.hero-tagline-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.tagline-script {
+  font-family: var(--font-script);
+  font-size: 32px;
+  color: var(--color-amber-gold);
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 15px rgba(255, 174, 25, 0.6);
+}
+
+.tagline-bold {
   font-family: var(--font-display);
-  font-size: 58px;
+  font-size: 22px;
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.12em;
   color: var(--text-primary);
   text-transform: uppercase;
-  margin-bottom: 16px;
 }
 
 .hero-subtext {
   font-family: var(--font-serif);
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+  font-size: 16px;
+  letter-spacing: 0.22em;
   color: var(--accent-gold);
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin: 0;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 18px;
   flex-wrap: wrap;
 }
@@ -981,22 +1123,39 @@ button {
 
   /* Hero Mobile */
   .hero-section {
-    min-height: 75vh;
+    min-height: 78vh;
   }
-  .hero-content {
+  .hero-content.hero-aurora-content {
     padding: 60px 0 40px 0;
   }
-  .hero-title {
-    font-size: 32px;
-    line-height: 1.15;
+  .aurora-main-word {
+    font-size: clamp(44px, 14vw, 76px);
+    letter-spacing: 0.12em;
+    padding: 0 10px;
+  }
+  .aurora-script-word {
+    font-size: clamp(36px, 11vw, 60px);
+    bottom: -18%;
+  }
+  .aurora-flare-sparkle {
+    width: 45px;
+    height: 45px;
+    right: 10%;
+  }
+  .tagline-script {
+    font-size: 22px;
+  }
+  .tagline-bold {
+    font-size: 16px;
   }
   .hero-subtext {
-    font-size: 16px;
-    margin-bottom: 28px;
+    font-size: 13px;
+    letter-spacing: 0.14em;
   }
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
     gap: 12px;
   }
   .btn-outline-gold, .btn-solid-blue {
