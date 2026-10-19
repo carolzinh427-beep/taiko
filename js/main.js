@@ -1,51 +1,44 @@
 /* ==========================================================================
    TAIKÔ BEACH CLUB - APPLICATION SCRIPT
+   Responsive Single-Site Engine (Desktop & Mobile)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initViewSwitchers();
+  initMobileDrawer();
   initModals();
   initSwipeTouchNavigation();
-  initScrollLinks();
 });
 
 /**
- * Switch between Mockup Split-Screen, Full Desktop, and Mobile-Only views
+ * Mobile Drawer Menu Handler
  */
-function initViewSwitchers() {
-  const stage = document.getElementById('mockupStage');
-  const btnSplit = document.getElementById('btnSplitView');
-  const btnDesktop = document.getElementById('btnDesktopView');
-  const btnMobile = document.getElementById('btnMobileView');
-  const buttons = [btnSplit, btnDesktop, btnMobile];
+function initMobileDrawer() {
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const drawer = document.getElementById('mobileDrawer');
 
-  function setActiveButton(activeBtn) {
-    buttons.forEach(btn => {
-      if (btn) btn.classList.remove('active');
-    });
-    if (activeBtn) activeBtn.classList.add('active');
-  }
-
-  if (btnSplit) {
-    btnSplit.addEventListener('click', () => {
-      stage.className = 'mockup-stage view-split-screen';
-      setActiveButton(btnSplit);
+  if (menuBtn && drawer) {
+    menuBtn.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+      const isOpen = drawer.classList.contains('open');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      
+      // Update hamburger icon to close X icon
+      if (isOpen) {
+        menuBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+      } else {
+        menuBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      }
     });
   }
 
-  if (btnDesktop) {
-    btnDesktop.addEventListener('click', () => {
-      stage.className = 'mockup-stage view-full-desktop';
-      setActiveButton(btnDesktop);
-    });
-  }
-
-  if (btnMobile) {
-    btnMobile.addEventListener('click', () => {
-      stage.className = 'mockup-stage view-full-mobile';
-      setActiveButton(btnMobile);
-    });
-  }
+  window.closeMobileDrawer = function() {
+    if (drawer && drawer.classList.contains('open')) {
+      drawer.classList.remove('open');
+      if (menuBtn) {
+        menuBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      }
+    }
+  };
 }
 
 /**
@@ -112,13 +105,15 @@ function initModals() {
       const guestName = document.getElementById('guestName')?.value || 'Convidado';
       const guestPhone = document.getElementById('guestPhone')?.value || '';
       const selectedEvent = document.getElementById('eventSelect')?.value || 'Agenda Semanal';
+      const guestCount = document.getElementById('guestCount')?.value || '2';
 
       // Send to WhatsApp directly with customized message
       const encodedMsg = encodeURIComponent(
         `Olá Taikô Beach Club! Gostaria de confirmar solicitação:\n\n` +
         `• Nome: ${guestName}\n` +
         `• WhatsApp: ${guestPhone}\n` +
-        `• Evento / Atração: ${selectedEvent}\n\n` +
+        `• Evento / Atração: ${selectedEvent}\n` +
+        `• Quantidade de Pessoas: ${guestCount}\n\n` +
         `Aguardo confirmação da equipe de concierge!`
       );
 
@@ -128,24 +123,25 @@ function initModals() {
       setTimeout(() => {
         window.open(`https://wa.me/5527999887766?text=${encodedMsg}`, '_blank');
         closeModal();
-      }, 1200);
+      }, 1000);
     });
   }
 }
 
 /**
- * Mobile swipe scroll buttons & touch enhancements
+ * Mobile swipe scroll buttons & touch enhancements for horizontal track
  */
 function initSwipeTouchNavigation() {
-  const track = document.getElementById('mobileSwipeTrack');
+  const track = document.getElementById('agendaGrid');
   if (!track) return;
 
-  // Horizontal mouse-drag support for desktop testing inside mobile frame
   let isDown = false;
   let startX;
   let scrollLeft;
 
   track.addEventListener('mousedown', (e) => {
+    // Only apply drag if container is scrollable (e.g. mobile/tablet)
+    if (track.scrollWidth <= track.clientWidth) return;
     isDown = true;
     track.style.cursor = 'grabbing';
     startX = e.pageX - track.offsetLeft;
@@ -154,12 +150,12 @@ function initSwipeTouchNavigation() {
 
   track.addEventListener('mouseleave', () => {
     isDown = false;
-    track.style.cursor = 'grab';
+    track.style.cursor = '';
   });
 
   track.addEventListener('mouseup', () => {
     isDown = false;
-    track.style.cursor = 'grab';
+    track.style.cursor = '';
   });
 
   track.addEventListener('mousemove', (e) => {
@@ -168,30 +164,5 @@ function initSwipeTouchNavigation() {
     const x = e.pageX - track.offsetLeft;
     const walk = (x - startX) * 1.5;
     track.scrollLeft = scrollLeft - walk;
-  });
-}
-
-/**
- * Smooth in-viewport scroll for navigation links
- */
-function initScrollLinks() {
-  const desktopScroll = document.getElementById('desktopScrollContainer');
-  const navLinks = document.querySelectorAll('.desktop-content-scroll a[href^="#"]');
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const targetId = link.getAttribute('href');
-      if (targetId && targetId !== '#') {
-        const targetEl = document.querySelector(targetId);
-        if (targetEl && desktopScroll) {
-          e.preventDefault();
-          const targetPosition = targetEl.offsetTop;
-          desktopScroll.scrollTo({
-            top: targetPosition - 70,
-            behavior: 'smooth'
-          });
-        }
-      }
-    });
   });
 }

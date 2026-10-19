@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAIKÔ BEACH CLUB • UI/UX Design Mockup | Vitória, ES</title>
-  <meta name="description" content="Design mockup profissional desktop e mobile para o TAIKÔ BEACH CLUB, lounge de alta gastronomia e nightlife na Praia do Canto, Vitória - ES.">
+  <title>TAIKÔ BEACH CLUB • Vitória, ES</title>
+  <meta name="description" content="Taikô Beach Club - High-end nightlife lounge e gastronomia no Triângulo das Bermudas, Praia do Canto, Vitória - ES. Programação semanal, camarotes e aniversários.">
   
   <!-- Google Fonts: Syne (High-impact sans), Cormorant Garamond (Thin serif), Plus Jakarta Sans (Modern UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,570 +16,318 @@
 </head>
 <body>
 
-  <!-- Top Studio Control Bar -->
-  <header class="studio-bar">
-    <div class="studio-brand">
-      <div class="studio-pill">UI/UX MOCKUP</div>
-      <div class="studio-title">TAIKÔ BEACH CLUB</div>
-      <div class="studio-location">• Praia do Canto, Vitória - ES</div>
-    </div>
-
-    <div class="studio-controls">
-      <button id="btnSplitView" class="studio-btn active" title="Exibição lado a lado Desktop + Mobile">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18"/></svg>
-        Split-Screen
-      </button>
-      <button id="btnDesktopView" class="studio-btn" title="Exibição Desktop tela cheia">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        Desktop
-      </button>
-      <button id="btnMobileView" class="studio-btn" title="Exibição Mobile isolada">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        Mobile
-      </button>
-    </div>
-
-    <div class="studio-actions">
-      <a href="https://wa.me/5527999887766?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Gostaria%20de%20reservar." target="_blank" rel="noopener noreferrer" class="studio-link-btn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        WhatsApp Concierge
+  <!-- Navigation Bar: Dark semi-transparent header with thin TAIKÔ palm tree logo and links -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-identity">
+        <div class="palm-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#D5BE9E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 38V16" />
+            <path d="M20 16C17 12 11 11 5 13C8 16 14 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
+            <path d="M20 16C23 12 29 11 35 13C32 16 26 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
+            <path d="M20 16C17 9 12 5 7 5C9 9 14 12 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
+            <path d="M20 16C23 9 28 5 33 5C31 9 26 12 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
+            <path d="M20 16C19 9 20 3 20 2C21 3 21 9 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-title">TAIKÔ</span>
+          <span class="brand-subtitle">BEACH CLUB</span>
+        </div>
       </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#agenda" class="nav-link">Programação</a></li>
+          <li><a href="#reservas" class="nav-link">Reservas</a></li>
+          <li><a href="#reservas" class="nav-link">Aniversários</a></li>
+          <li><a href="#localizacao" class="nav-link">Localização</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <button class="header-cta-btn" onclick="openBookingModal('camarote')">Reservar Camarote</button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="mobile-menu-toggle" aria-label="Abrir Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </header>
 
-  <!-- Main Mockup Stage -->
-  <main id="mockupStage" class="mockup-stage view-split-screen">
-    <div class="split-screen-grid">
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <ul class="mobile-nav-links">
+      <li><a href="#agenda" class="mobile-nav-link" onclick="closeMobileDrawer()">Programação</a></li>
+      <li><a href="#reservas" class="mobile-nav-link" onclick="closeMobileDrawer()">Reservas</a></li>
+      <li><a href="#reservas" class="mobile-nav-link" onclick="closeMobileDrawer()">Aniversários</a></li>
+      <li><a href="#localizacao" class="mobile-nav-link" onclick="closeMobileDrawer()">Localização</a></li>
+    </ul>
 
-      <!-- ====================================================================
-           LEFT COLUMN: DESKTOP VIEWPORT
-           ==================================================================== -->
-      <section class="desktop-viewport-column">
-        <div class="viewport-label-bar">
-          <div class="viewport-tag">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            Desktop Viewport
-          </div>
-          <div class="viewport-specs">1440 × 900 • 60 FPS • High Contrast Night</div>
-        </div>
-
-        <div class="desktop-viewport-frame">
-          <!-- Desktop Browser Window Chrome -->
-          <div class="browser-chrome">
-            <div class="chrome-dots">
-              <span class="chrome-dot dot-red"></span>
-              <span class="chrome-dot dot-yellow"></span>
-              <span class="chrome-dot dot-green"></span>
-            </div>
-            <div class="chrome-url-bar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <span>taikobeachclub.com.br</span>
-            </div>
-            <div class="chrome-actions">Vitória / ES</div>
-          </div>
-
-          <!-- Desktop Page Content Scroll Area -->
-          <div id="desktopScrollContainer" class="desktop-content-scroll">
-            
-            <!-- Navigation Bar: Dark semi-transparent header with thin TAIKÔ palm tree logo and links -->
-            <header class="site-header">
-              <div class="header-container">
-                <a href="#desktopHero" class="brand-identity">
-                  <div class="palm-icon">
-                    <svg viewBox="0 0 40 40" fill="none" stroke="#D5BE9E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M20 38V16" />
-                      <path d="M20 16C17 12 11 11 5 13C8 16 14 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
-                      <path d="M20 16C23 12 29 11 35 13C32 16 26 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
-                      <path d="M20 16C17 9 12 5 7 5C9 9 14 12 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
-                      <path d="M20 16C23 9 28 5 33 5C31 9 26 12 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
-                      <path d="M20 16C19 9 20 3 20 2C21 3 21 9 20 16Z" fill="#D5BE9E" fill-opacity="0.2" />
-                    </svg>
-                  </div>
-                  <div class="brand-text-group">
-                    <span class="brand-title">TAIKÔ</span>
-                    <span class="brand-subtitle">BEACH CLUB</span>
-                  </div>
-                </a>
-
-                <nav>
-                  <ul class="nav-links">
-                    <li><a href="#desktopAgenda" class="nav-link">Programação</a></li>
-                    <li><a href="#desktopReservas" class="nav-link">Reservas</a></li>
-                    <li><a href="#desktopReservas" class="nav-link">Aniversários</a></li>
-                    <li><a href="#desktopLocalizacao" class="nav-link">Localização</a></li>
-                  </ul>
-                </nav>
-
-                <div>
-                  <button class="header-cta-btn" onclick="openBookingModal('camarote')">Reservar Camarote</button>
-                </div>
-              </div>
-            </header>
-
-            <!-- Hero Section: High-quality dark background nightlife with DJ booth and blue lighting -->
-            <section id="desktopHero" class="hero-section">
-              <div class="hero-background-media">
-                <img src="assets/images/hero-taiko.jpg" alt="Noite no Taikô Beach Club Vitória com DJ e iluminação azul" class="hero-bg-img">
-                <div class="hero-overlay-dark"></div>
-              </div>
-
-              <div class="hero-content">
-                <div class="hero-badge-tag">Triângulo das Bermudas • Vitória</div>
-                <h1 class="hero-title">SUA NOVA EXPERIÊNCIA NO TRIÂNGULO</h1>
-                <p class="hero-subtext">Praia do Canto, Vitória, ES</p>
-
-                <div class="hero-actions">
-                  <a href="#desktopAgenda" class="btn-outline-gold">VER AGENDA SEMANAL</a>
-                  <button class="btn-solid-blue" onclick="openBookingModal('camarote')">RESERVAR CAMAROTE</button>
-                </div>
-              </div>
-            </section>
-
-            <!-- Section: AGENDA SEMANAL with 5 horizontal dark card events -->
-            <section id="desktopAgenda" class="section-wrapper">
-              <div class="section-header">
-                <div>
-                  <span class="section-label">Programação Exclusiva</span>
-                  <h2 class="section-title">AGENDA SEMANAL</h2>
-                </div>
-                <div class="section-subinfo">Quinta a Segunda • Vitória, ES</div>
-              </div>
-
-              <div class="agenda-cards-horizontal">
-                
-                <!-- Event 1: QUI -->
-                <article class="event-card">
-                  <div class="event-day-header">
-                    <span class="event-day-badge">QUI</span>
-                    <span class="event-time-stamp">A partir das 20h</span>
-                  </div>
-                  <div class="event-body">
-                    <h3 class="event-name">Gandaia na Varanda</h3>
-                    <p class="event-genre">Open Format, Hits e ambiente ao ar livre com vista exclusiva.</p>
-                    <div class="event-meta">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                      <span>Varanda Lounge</span>
-                    </div>
-                  </div>
-                  <div class="event-actions">
-                    <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Gandaia na Varanda')">Nome na Lista</button>
-                    <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Gandaia na Varanda')">Reservar Mesa</button>
-                  </div>
-                </article>
-
-                <!-- Event 2: SEX -->
-                <article class="event-card featured">
-                  <div class="event-day-header">
-                    <span class="event-day-badge">SEX</span>
-                    <span class="event-time-stamp">A partir das 21h</span>
-                  </div>
-                  <div class="event-body">
-                    <h3 class="event-name">Forró do Taikô</h3>
-                    <p class="event-genre">O melhor do forró contemporâneo e brasilidades em clima refinado.</p>
-                    <div class="event-meta">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                      <span>Pista Principal</span>
-                    </div>
-                  </div>
-                  <div class="event-actions">
-                    <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Forró do Taikô')">Nome na Lista</button>
-                    <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Forró do Taikô')">Reservar Mesa</button>
-                  </div>
-                </article>
-
-                <!-- Event 3: SÁB -->
-                <article class="event-card">
-                  <div class="event-day-header">
-                    <span class="event-day-badge">SÁB</span>
-                    <span class="event-time-stamp">A partir das 22h</span>
-                  </div>
-                  <div class="event-body">
-                    <h3 class="event-name">Social Club</h3>
-                    <p class="event-genre">House Music, Deep e os maiores DJs da cena eletrônica nacional.</p>
-                    <div class="event-meta">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                      <span>Main Room & DJ Booth</span>
-                    </div>
-                  </div>
-                  <div class="event-actions">
-                    <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Social Club')">Nome na Lista</button>
-                    <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Social Club')">Reservar Mesa</button>
-                  </div>
-                </article>
-
-                <!-- Event 4: DOM -->
-                <article class="event-card">
-                  <div class="event-day-header">
-                    <span class="event-day-badge">DOM</span>
-                    <span class="event-time-stamp">A partir das 17h</span>
-                  </div>
-                  <div class="event-body">
-                    <h3 class="event-name">Samba na Varanda</h3>
-                    <p class="event-genre">Sunset sofisticado com samba de raiz, drinks autorais e clima descontraído.</p>
-                    <div class="event-meta">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-                      <span>Sunset & Varanda</span>
-                    </div>
-                  </div>
-                  <div class="event-actions">
-                    <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Samba na Varanda')">Nome na Lista</button>
-                    <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Samba na Varanda')">Reservar Mesa</button>
-                  </div>
-                </article>
-
-                <!-- Event 5: SEG -->
-                <article class="event-card">
-                  <div class="event-day-header">
-                    <span class="event-day-badge">SEG</span>
-                    <span class="event-time-stamp">A partir das 20h</span>
-                  </div>
-                  <div class="event-body">
-                    <h3 class="event-name">Ruah</h3>
-                    <p class="event-genre">Sessão exclusiva com sonoridades orgânicas, afro house e lounge session.</p>
-                    <div class="event-meta">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M18 9l-6-6-6 6"/></svg>
-                      <span>Lounge Night</span>
-                    </div>
-                  </div>
-                  <div class="event-actions">
-                    <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Ruah')">Nome na Lista</button>
-                    <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Ruah')">Reservar Mesa</button>
-                  </div>
-                </article>
-
-              </div>
-            </section>
-
-            <!-- Section: RESERVAS & ANIVERSÁRIOS (Desktop: 2 Columns) -->
-            <section id="desktopReservas" class="reservas-aniversarios-section">
-              <div class="section-header">
-                <div>
-                  <span class="section-label">Experiências Exclusivas</span>
-                  <h2 class="section-title">RESERVAS & ANIVERSÁRIOS</h2>
-                </div>
-                <div class="section-subinfo">Atendimento personalizado pelo Concierge VIP</div>
-              </div>
-
-              <div class="cards-two-columns">
-                <!-- Card 1: CAMAROTES & LOUNGES -->
-                <article class="experience-card">
-                  <div class="exp-image-wrap">
-                    <img src="assets/images/camarote-lounge.jpg" alt="Camarotes e Lounges VIP Taikô Beach Club" class="exp-img">
-                    <span class="exp-overlay-tag">Experiência VIP</span>
-                  </div>
-                  <div class="exp-content">
-                    <div>
-                      <h3 class="exp-title">CAMAROTES & LOUNGES</h3>
-                      <p class="exp-desc">
-                        Espaços reservados com visão privilegiada do palco e da cabine do DJ, garçom e segurança dedicados, e menu premium com cartas de champanhes e destilados selecionados.
-                      </p>
-                      <ul class="exp-perks">
-                        <li>
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                          <span>Entrada preferencial sem fila para convidados</span>
-                        </li>
-                        <li>
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                          <span>Atendimento com serviço de garçom exclusivo</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button class="btn-solid-blue" onclick="openBookingModal('camarote')">Consultar Disponibilidade</button>
-                  </div>
-                </article>
-
-                <!-- Card 2: COMEMORE SEU ANIVERSÁRIO -->
-                <article class="experience-card">
-                  <div class="exp-image-wrap">
-                    <img src="assets/images/aniversario-vip.jpg" alt="Comemore seu Aniversário no Taikô Beach Club" class="exp-img">
-                    <span class="exp-overlay-tag">Condição Especial</span>
-                  </div>
-                  <div class="exp-content">
-                    <div>
-                      <h3 class="exp-title">COMEMORE SEU ANIVERSÁRIO</h3>
-                      <p class="exp-desc">
-                        Condições exclusivas para aniversariantes da semana. Entrada cortesia para o aniversariante, lista com desconto especial para amigos, além de espumante de cortesia na reserva de lounge.
-                      </p>
-                      <ul class="exp-perks">
-                        <li>
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                          <span>Entrada VIP liberada para o aniversariante</span>
-                        </li>
-                        <li>
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                          <span>Espumante Chandon de brinde para mesas reservadas</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <button class="btn-solid-blue" onclick="openBookingModal('aniversario')">Solicitar Vantagens</button>
-                  </div>
-                </article>
-              </div>
-            </section>
-
-            <!-- Footer (RODAPÉ) Desktop -->
-            <footer id="desktopLocalizacao" class="site-footer">
-              <div class="footer-top-row">
-                <div class="footer-info-block">
-                  <div class="footer-address">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Rua Joaquim Lírio, 820 - Praia do Canto, Vitória - ES (Em frente ao Caza Brava)</span>
-                  </div>
-                  <div class="footer-meta-inline">
-                    <span class="meta-pill"><strong>Funcionamento:</strong> Quinta a Segunda</span>
-                    <span class="meta-pill"><strong>Classificação:</strong> 18 anos</span>
-                  </div>
-                </div>
-
-                <div class="footer-actions-block">
-                  <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Lirio+820+Praia+do+Canto+Vitoria+ES" target="_blank" rel="noopener noreferrer" class="btn-footer-maps">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-                    Abrir no Google Maps
-                  </a>
-                  <a href="https://wa.me/5527999887766?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20reservas." target="_blank" rel="noopener noreferrer" class="btn-footer-whatsapp">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                    Falar no WhatsApp
-                  </a>
-                </div>
-              </div>
-
-              <div class="footer-bottom-row">
-                <div class="footer-brand-mini">
-                  <div class="palm-icon" style="width: 20px; height: 20px;">
-                    <svg viewBox="0 0 40 40" fill="none" stroke="#D5BE9E" stroke-width="1.6"><path d="M20 38V16"/><path d="M20 16C17 12 11 11 5 13C8 16 14 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2"/><path d="M20 16C23 12 29 11 35 13C32 16 26 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2"/></svg>
-                  </div>
-                  <span>TAIKÔ BEACH CLUB • VITÓRIA / ES • TODOS OS DIREITOS RESERVADOS</span>
-                </div>
-                <div>TRIÂNGULO DAS BERMUDAS</div>
-              </div>
-            </footer>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           RIGHT COLUMN: MOBILE VIEWPORT (DEVICE MOCKUP FRAME)
-           ==================================================================== -->
-      <section class="mobile-viewport-column">
-        <div class="viewport-label-bar">
-          <div class="viewport-tag">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            Mobile Viewport
-          </div>
-          <div class="viewport-specs">390 × 844 • iOS 18</div>
-        </div>
-
-        <div class="mobile-device-frame">
-          <div class="mobile-device-inner">
-            
-            <!-- Mobile Dynamic Island Notch & Status -->
-            <div class="mobile-island-notch">
-              <span>22:00</span>
-              <div class="mobile-island-pill"></div>
-              <span>5G</span>
-            </div>
-
-            <!-- Mobile Scrollable Content Area -->
-            <div id="mobileScrollContainer" class="mobile-content-scroll">
-              
-              <!-- Mobile Compact Header -->
-              <div class="mobile-header">
-                <div class="mobile-brand-group">
-                  <div class="mobile-palm">
-                    <svg viewBox="0 0 40 40" fill="none" stroke="#D5BE9E" stroke-width="1.6">
-                      <path d="M20 38V16"/>
-                      <path d="M20 16C17 12 11 11 5 13C8 16 14 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2"/>
-                      <path d="M20 16C23 12 29 11 35 13C32 16 26 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="mobile-brand-title">TAIKÔ</div>
-                    <div class="mobile-brand-sub">BEACH CLUB</div>
-                  </div>
-                </div>
-
-                <button class="mobile-menu-trigger" onclick="openBookingModal('camarote')" aria-label="Menu e reservas">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                </button>
-              </div>
-
-              <!-- Mobile Hero Banner -->
-              <div class="mobile-hero-banner">
-                <img src="assets/images/hero-taiko.jpg" alt="Taikô Lounge Vitória" class="mobile-hero-bg">
-                <div class="mobile-hero-darken"></div>
-                <div class="mobile-hero-body">
-                  <h2 class="mobile-hero-h1">SUA NOVA EXPERIÊNCIA NO TRIÂNGULO</h2>
-                  <p class="mobile-hero-place">Praia do Canto, Vitória, ES</p>
-                  <div class="mobile-hero-cta-row">
-                    <a href="#mobileSwipeTrack" class="mobile-btn-outline">VER AGENDA</a>
-                    <button class="mobile-btn-blue" onclick="openBookingModal('camarote')">RESERVAR CAMAROTE</button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Upper section: Vertical / Swipeable "AGENDA SEMANAL" event cards -->
-              <div class="mobile-agenda-section">
-                <div class="mobile-section-header">
-                  <h3 class="mobile-section-title">AGENDA SEMANAL</h3>
-                  <div class="mobile-swipe-hint">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                    <span>Deslize</span>
-                  </div>
-                </div>
-
-                <!-- Swipeable Track -->
-                <div id="mobileSwipeTrack" class="mobile-swipe-track">
-                  
-                  <!-- QUI -->
-                  <div class="mobile-event-card">
-                    <div class="event-day-header">
-                      <span class="event-day-badge">QUI</span>
-                      <span class="event-time-stamp">20h</span>
-                    </div>
-                    <div class="event-body">
-                      <h4 class="event-name">Gandaia na Varanda</h4>
-                      <p class="event-genre">Open format & varanda aberta.</p>
-                    </div>
-                    <div class="event-actions">
-                      <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Gandaia na Varanda')">Nome na Lista</button>
-                      <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Gandaia na Varanda')">Reservar Mesa</button>
-                    </div>
-                  </div>
-
-                  <!-- SEX -->
-                  <div class="mobile-event-card active-day">
-                    <div class="event-day-header">
-                      <span class="event-day-badge">SEX</span>
-                      <span class="event-time-stamp">21h</span>
-                    </div>
-                    <div class="event-body">
-                      <h4 class="event-name">Forró do Taikô</h4>
-                      <p class="event-genre">Forró chic & ritmos brasileiros.</p>
-                    </div>
-                    <div class="event-actions">
-                      <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Forró do Taikô')">Nome na Lista</button>
-                      <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Forró do Taikô')">Reservar Mesa</button>
-                    </div>
-                  </div>
-
-                  <!-- SÁB -->
-                  <div class="mobile-event-card">
-                    <div class="event-day-header">
-                      <span class="event-day-badge">SÁB</span>
-                      <span class="event-time-stamp">22h</span>
-                    </div>
-                    <div class="event-body">
-                      <h4 class="event-name">Social Club</h4>
-                      <p class="event-genre">House Music & DJ set internacional.</p>
-                    </div>
-                    <div class="event-actions">
-                      <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Social Club')">Nome na Lista</button>
-                      <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Social Club')">Reservar Mesa</button>
-                    </div>
-                  </div>
-
-                  <!-- DOM -->
-                  <div class="mobile-event-card">
-                    <div class="event-day-header">
-                      <span class="event-day-badge">DOM</span>
-                      <span class="event-time-stamp">17h</span>
-                    </div>
-                    <div class="event-body">
-                      <h4 class="event-name">Samba na Varanda</h4>
-                      <p class="event-genre">Sunset, samba de raiz e drinks.</p>
-                    </div>
-                    <div class="event-actions">
-                      <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Samba na Varanda')">Nome na Lista</button>
-                      <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Samba na Varanda')">Reservar Mesa</button>
-                    </div>
-                  </div>
-
-                  <!-- SEG -->
-                  <div class="mobile-event-card">
-                    <div class="event-day-header">
-                      <span class="event-day-badge">SEG</span>
-                      <span class="event-time-stamp">20h</span>
-                    </div>
-                    <div class="event-body">
-                      <h4 class="event-name">Ruah</h4>
-                      <p class="event-genre">Deep House & lounge exclusivo.</p>
-                    </div>
-                    <div class="event-actions">
-                      <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Ruah')">Nome na Lista</button>
-                      <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Ruah')">Reservar Mesa</button>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <!-- Section "RESERVAS & ANIVERSÁRIOS": Two stacked cards -->
-              <div class="mobile-reservas-section">
-                <div class="mobile-section-header">
-                  <h3 class="mobile-section-title">RESERVAS & ANIVERSÁRIOS</h3>
-                </div>
-
-                <div class="mobile-stacked-cards">
-                  <!-- Left card: CAMAROTES & LOUNGES with indoor photo and blue button -->
-                  <div class="mobile-card-item">
-                    <div class="mobile-card-img-wrap">
-                      <img src="assets/images/camarote-lounge.jpg" alt="Camarotes e Lounges Taikô" class="mobile-card-img">
-                      <span class="mobile-card-pill">Área VIP</span>
-                    </div>
-                    <div class="mobile-card-body">
-                      <h4 class="mobile-card-title">CAMAROTES & LOUNGES</h4>
-                      <p class="mobile-card-desc">Atendimento privativo, visibilidade do DJ e serviço de garçom exclusivo no Triângulo.</p>
-                      <button class="btn-mobile-blue" onclick="openBookingModal('camarote')">Consultar Disponibilidade</button>
-                    </div>
-                  </div>
-
-                  <!-- Right card: COMEMORE SEU ANIVERSÁRIO with VIP description and blue button -->
-                  <div class="mobile-card-item">
-                    <div class="mobile-card-img-wrap">
-                      <img src="assets/images/aniversario-vip.jpg" alt="Comemore Aniversário no Taikô" class="mobile-card-img">
-                      <span class="mobile-card-pill">Benefícios VIP</span>
-                    </div>
-                    <div class="mobile-card-body">
-                      <h4 class="mobile-card-title">COMEMORE SEU ANIVERSÁRIO</h4>
-                      <p class="mobile-card-desc">Condições VIP com entrada cortesia, lista de convidados exclusiva e espumante de cortesia.</p>
-                      <button class="btn-mobile-blue" onclick="openBookingModal('aniversario')">Solicitar Vantagens</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Footer (RODAPÉ) Mobile -->
-              <footer class="mobile-footer">
-                <div class="mobile-footer-text-group">
-                  <div class="mobile-footer-address">
-                    Rua Joaquim Lírio, 820 - Praia do Canto, Vitória - ES (Em frente ao Caza Brava)
-                  </div>
-                  <div class="mobile-footer-info">
-                    <div><strong>Funcionamento:</strong> Quinta a Segunda</div>
-                    <div><strong>Classificação:</strong> 18 anos</div>
-                  </div>
-                </div>
-
-                <div class="mobile-footer-ctas">
-                  <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Lirio+820+Praia+do+Canto+Vitoria+ES" target="_blank" rel="noopener noreferrer" class="btn-mobile-maps">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-                    Abrir no Google Maps
-                  </a>
-                  <a href="https://wa.me/5527999887766?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Gostaria%20de%20reservar." target="_blank" rel="noopener noreferrer" class="btn-mobile-whatsapp">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                    Falar no WhatsApp
-                  </a>
-                </div>
-              </footer>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <div class="mobile-drawer-footer">
+      <button class="btn-solid-blue" style="width: 100%;" onclick="closeMobileDrawer(); openBookingModal('camarote');">
+        Reservar Camarote
+      </button>
+      <a href="https://wa.me/5527999887766?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20reservas." target="_blank" rel="noopener noreferrer" class="btn-outline-gold" style="width: 100%; text-align: center;">
+        Falar no WhatsApp
+      </a>
     </div>
+  </div>
+
+  <main>
+    <!-- Hero Section: High-quality dark background nightlife with DJ booth and blue lighting -->
+    <section id="hero" class="hero-section">
+      <div class="hero-background-media">
+        <img src="assets/images/hero-taiko.jpg" alt="Noite no Taikô Beach Club Vitória com DJ e iluminação azul" class="hero-bg-img">
+        <div class="hero-overlay-dark"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge-tag">Triângulo das Bermudas • Vitória</div>
+          <h1 class="hero-title">SUA NOVA EXPERIÊNCIA NO TRIÂNGULO</h1>
+          <p class="hero-subtext">Praia do Canto, Vitória, ES</p>
+
+          <div class="hero-actions">
+            <a href="#agenda" class="btn-outline-gold">VER AGENDA SEMANAL</a>
+            <button class="btn-solid-blue" onclick="openBookingModal('camarote')">RESERVAR CAMAROTE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: AGENDA SEMANAL with 5 horizontal dark card events (swipeable on mobile) -->
+    <section id="agenda" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-label">Programação Exclusiva</span>
+            <h2 class="section-title">AGENDA SEMANAL</h2>
+          </div>
+          <div class="section-subinfo">Quinta a Segunda • Vitória, ES</div>
+        </div>
+
+        <div class="mobile-swipe-instruction">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span>Deslize para ver os dias da semana</span>
+        </div>
+
+        <div id="agendaGrid" class="agenda-cards-grid">
+          
+          <!-- Event 1: QUI -->
+          <article class="event-card">
+            <div class="event-day-header">
+              <span class="event-day-badge">QUI</span>
+              <span class="event-time-stamp">A partir das 20h</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-name">Gandaia na Varanda</h3>
+              <p class="event-genre">Open Format, Hits e ambiente ao ar livre com vista exclusiva.</p>
+              <div class="event-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>Varanda Lounge</span>
+              </div>
+            </div>
+            <div class="event-actions">
+              <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Gandaia na Varanda')">Nome na Lista</button>
+              <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Gandaia na Varanda')">Reservar Mesa</button>
+            </div>
+          </article>
+
+          <!-- Event 2: SEX -->
+          <article class="event-card featured">
+            <div class="event-day-header">
+              <span class="event-day-badge">SEX</span>
+              <span class="event-time-stamp">A partir das 21h</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-name">Forró do Taikô</h3>
+              <p class="event-genre">O melhor do forró contemporâneo e brasilidades em clima refinado.</p>
+              <div class="event-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <span>Pista Principal</span>
+              </div>
+            </div>
+            <div class="event-actions">
+              <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Forró do Taikô')">Nome na Lista</button>
+              <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Forró do Taikô')">Reservar Mesa</button>
+            </div>
+          </article>
+
+          <!-- Event 3: SÁB -->
+          <article class="event-card">
+            <div class="event-day-header">
+              <span class="event-day-badge">SÁB</span>
+              <span class="event-time-stamp">A partir das 22h</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-name">Social Club</h3>
+              <p class="event-genre">House Music, Deep e os maiores DJs da cena eletrônica nacional.</p>
+              <div class="event-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                <span>Main Room & DJ Booth</span>
+              </div>
+            </div>
+            <div class="event-actions">
+              <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Social Club')">Nome na Lista</button>
+              <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Social Club')">Reservar Mesa</button>
+            </div>
+          </article>
+
+          <!-- Event 4: DOM -->
+          <article class="event-card">
+            <div class="event-day-header">
+              <span class="event-day-badge">DOM</span>
+              <span class="event-time-stamp">A partir das 17h</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-name">Samba na Varanda</h3>
+              <p class="event-genre">Sunset sofisticado com samba de raiz, drinks autorais e clima descontraído.</p>
+              <div class="event-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+                <span>Sunset & Varanda</span>
+              </div>
+            </div>
+            <div class="event-actions">
+              <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Samba na Varanda')">Nome na Lista</button>
+              <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Samba na Varanda')">Reservar Mesa</button>
+            </div>
+          </article>
+
+          <!-- Event 5: SEG -->
+          <article class="event-card">
+            <div class="event-day-header">
+              <span class="event-day-badge">SEG</span>
+              <span class="event-time-stamp">A partir das 20h</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-name">Ruah</h3>
+              <p class="event-genre">Sessão exclusiva com sonoridades orgânicas, afro house e lounge session.</p>
+              <div class="event-meta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M18 9l-6-6-6 6"/></svg>
+                <span>Lounge Night</span>
+              </div>
+            </div>
+            <div class="event-actions">
+              <button class="btn-outline-subtle" onclick="openBookingModal('lista', 'Ruah')">Nome na Lista</button>
+              <button class="btn-blue-sm" onclick="openBookingModal('mesa', 'Ruah')">Reservar Mesa</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: RESERVAS & ANIVERSÁRIOS (2 Columns on Desktop, Stacked on Mobile) -->
+    <section id="reservas" class="reservas-aniversarios-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-label">Experiências Exclusivas</span>
+            <h2 class="section-title">RESERVAS & ANIVERSÁRIOS</h2>
+          </div>
+          <div class="section-subinfo">Atendimento personalizado pelo Concierge VIP</div>
+        </div>
+
+        <div class="cards-two-columns">
+          <!-- Card 1: CAMAROTES & LOUNGES -->
+          <article class="experience-card">
+            <div class="exp-image-wrap">
+              <img src="assets/images/camarote-lounge.jpg" alt="Camarotes e Lounges VIP Taikô Beach Club" class="exp-img">
+              <span class="exp-overlay-tag">Camarotes & Lounges</span>
+            </div>
+            <div class="exp-content">
+              <div>
+                <h3 class="exp-title">CAMAROTES & LOUNGES</h3>
+                <p class="exp-desc">
+                  Espaços reservados com visão privilegiada do palco e da cabine do DJ, garçom e segurança dedicados, e menu premium com cartas de champanhes e destilados selecionados.
+                </p>
+                <ul class="exp-perks">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Entrada preferencial sem fila para convidados</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Atendimento com serviço de garçom exclusivo</span>
+                  </li>
+                </ul>
+              </div>
+              <button class="btn-solid-blue" onclick="openBookingModal('camarote')">Consultar Disponibilidade</button>
+            </div>
+          </article>
+
+          <!-- Card 2: COMEMORE SEU ANIVERSÁRIO -->
+          <article class="experience-card">
+            <div class="exp-image-wrap">
+              <img src="assets/images/aniversario-vip.jpg" alt="Comemore seu Aniversário no Taikô Beach Club" class="exp-img">
+              <span class="exp-overlay-tag">Condição Especial</span>
+            </div>
+            <div class="exp-content">
+              <div>
+                <h3 class="exp-title">COMEMORE SEU ANIVERSÁRIO</h3>
+                <p class="exp-desc">
+                  Condições exclusivas para aniversariantes da semana. Entrada cortesia para o aniversariante, lista com benefícios especiais para seus convidados, lounge com espumante de cortesia e atendimento VIP.
+                </p>
+                <ul class="exp-perks">
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Entrada VIP liberada para o aniversariante</span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Espumante Chandon cortesia na reserva de mesa/lounge</span>
+                  </li>
+                </ul>
+              </div>
+              <button class="btn-solid-blue" onclick="openBookingModal('aniversario')">Solicitar Vantagens</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Footer (RODAPÉ): Text, Info and Flat CTA buttons -->
+  <footer id="localizacao" class="site-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div class="footer-info-block">
+          <div class="footer-address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Rua Joaquim Lírio, 820 - Praia do Canto, Vitória - ES (Em frente ao Caza Brava)</span>
+          </div>
+          <div class="footer-meta-inline">
+            <span class="meta-pill"><strong>Funcionamento:</strong> Quinta a Segunda</span>
+            <span class="meta-pill"><strong>Classificação:</strong> 18 anos</span>
+          </div>
+        </div>
+
+        <div class="footer-actions-block">
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Lirio+820+Praia+do+Canto+Vitoria+ES" target="_blank" rel="noopener noreferrer" class="btn-footer-maps">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            Abrir no Google Maps
+          </a>
+          <a href="https://wa.me/5527999887766?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20reservas." target="_blank" rel="noopener noreferrer" class="btn-footer-whatsapp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-brand-mini">
+          <div class="palm-icon" style="width: 20px; height: 20px;">
+            <svg viewBox="0 0 40 40" fill="none" stroke="#D5BE9E" stroke-width="1.6"><path d="M20 38V16"/><path d="M20 16C17 12 11 11 5 13C8 16 14 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2"/><path d="M20 16C23 12 29 11 35 13C32 16 26 17 20 16Z" fill="#D5BE9E" fill-opacity="0.2"/></svg>
+          </div>
+          <span>TAIKÔ BEACH CLUB • VITÓRIA / ES • TODOS OS DIREITOS RESERVADOS</span>
+        </div>
+        <div>TRIÂNGULO DAS BERMUDAS</div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Interactive Modal for VIP Booking / Guest List -->
   <div id="modalOverlay" class="modal-overlay" role="dialog" aria-modal="true">
