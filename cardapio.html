@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio de Drinks & Petiscos • TAIKÔ BEACH CLUB</title>
+  <meta name="description" content="Cardápio oficial de drinks autorais, coquetéis clássicos, rótulos de champanhe e petiscos gourmet do Taikô Beach Club na Praia do Canto, Vitória - ES.">
+  
+  <!-- Favicon using official Taikô palm logo -->
+  <link rel="icon" type="image/png" href="assets/images/logo-palm-gold.png">
+  <link rel="apple-touch-icon" href="assets/images/logo-palm-gold.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&family=Orbitron:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Style+Script&family=Syncopate:wght@700&family=Syne:wght@700;800&family=Yellowtail&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/cardapio.css">
+</head>
+<body>
+
+  <!-- Navigation Bar: Vidralítico Glassmorphism Header -->
+  <header class="site-header vidralitico-glass">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-identity">
+        <div class="palm-logo-wrap">
+          <img src="assets/images/logo-palm-gold.png" alt="Taikô Beach Club Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-title">TAIKÔ</span>
+          <span class="brand-subtitle">BEACH CLUB</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="index.html#agenda" class="nav-link">Programação</a></li>
+          <li><a href="cardapio.html" class="nav-link active nav-highlight-gold">Cardápio</a></li>
+          <li><a href="index.html#reservas" class="nav-link">Reservas</a></li>
+          <li><a href="index.html#localizacao" class="nav-link">Localização</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta-group">
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/taikobeachclub?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram Taikô Beach Club" title="Siga @taikobeachclub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+
+        <!-- WhatsApp Header Button -->
+        <a href="https://wa.me/5527995019111?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Gostaria%20de%20reservar%20mesa%20para%20degusta%C3%A7%C3%A3o%20do%20card%C3%A1pio." target="_blank" rel="noopener noreferrer" class="header-whatsapp-btn" title="Falar no WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="https://wa.me/5527995019111?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Quero%20reservar%20mesa." target="_blank" rel="noopener noreferrer" class="header-cta-btn">Reservar Mesa</a>
+      </div>
+
+      <!-- Mobile Hamburger Button: Glassmorphic Vidralítico Top Right -->
+      <button id="mobileMenuBtn" class="mobile-menu-toggle vidralitico-btn" aria-label="Abrir Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu Vidralítico -->
+  <div id="mobileDrawer" class="mobile-drawer vidralitico-glass">
+    <div class="mobile-drawer-header">
+      <div class="brand-identity">
+        <div class="palm-logo-wrap" style="width: 32px; height: 32px;">
+          <img src="assets/images/logo-palm-gold.png" alt="Taikô Beach Club Logo" class="brand-logo-img">
+        </div>
+        <span class="brand-title" style="font-size: 16px;">TAIKÔ</span>
+      </div>
+      <button class="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Fechar">✕</button>
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link" onclick="closeMobileDrawer()">Página Inicial</a></li>
+      <li><a href="cardapio.html" class="mobile-nav-link mobile-link-highlight" onclick="closeMobileDrawer()">Cardápio de Drinks & Petiscos</a></li>
+      <li><a href="index.html#agenda" class="mobile-nav-link" onclick="closeMobileDrawer()">Programação Semanal</a></li>
+      <li><a href="index.html#reservas" class="mobile-nav-link" onclick="closeMobileDrawer()">Camarotes & Lounges</a></li>
+      <li><a href="index.html#localizacao" class="mobile-nav-link" onclick="closeMobileDrawer()">Localização & Mapa</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="https://wa.me/5527995019111?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Gostaria%20de%20reservar." target="_blank" rel="noopener noreferrer" class="btn-solid-blue" style="width: 100%; text-align: center;">
+        Falar no WhatsApp (27) 99501-9111
+      </a>
+      <a href="https://www.instagram.com/taikobeachclub?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="btn-outline-gold" style="width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        Siga @taikobeachclub
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Cardápio Hero Header -->
+    <section class="cardapio-hero">
+      <div class="container text-center" data-animate="fade-up">
+        <span class="cardapio-badge">Alta Coquetelaria & Gastronomia</span>
+        <h1 class="cardapio-main-title">CARDÁPIO EXCLUSIVO</h1>
+        <p class="cardapio-subtitle">Drinks Autorais, Rótulos Premium e Petiscos Gourmet</p>
+        <p class="cardapio-location-hint">Praia do Canto, Vitória - ES</p>
+      </div>
+    </section>
+
+    <!-- Transição Visual Entre Seções -->
+    <div class="section-divider-flow">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <section class="menu-categories-wrapper" data-animate="fade-up">
+      <div class="container">
+        <div class="category-filter-bar">
+          <button class="cat-pill-btn active" data-filter="all">Todos</button>
+          <button class="cat-pill-btn" data-filter="autorais">Drinks Autorais</button>
+          <button class="cat-pill-btn" data-filter="classicos">Clássicos</button>
+          <button class="cat-pill-btn" data-filter="garrafas">Garrafas & Champagnes</button>
+          <button class="cat-pill-btn" data-filter="petiscos">Petiscos & Entradas</button>
+          <button class="cat-pill-btn" data-filter="sobremesas">Sobremesas</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Items Grid -->
+    <section class="menu-items-section">
+      <div class="container">
+        
+        <!-- Category: DRINKS AUTORAIS -->
+        <div class="menu-category-group" data-category="autorais">
+          <div class="cat-heading-row">
+            <h2 class="cat-heading-title">DRINKS AUTORAIS TAIKÔ</h2>
+            <span class="cat-heading-sub">Coquetéis exclusivos desenvolvidos por nossos mixologistas</span>
+          </div>
+
+          <div class="menu-grid">
+            
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge signature">Signature</span>
+                  <h3 class="item-name">Taikô Passion Blue</h3>
+                </div>
+                <span class="item-price">R$ 44</span>
+              </div>
+              <p class="item-ingredients">Gin Tanqueray Sevilla, Curaçau Blue, xarope artesanal de maracujá, suco de limão siciliano e espuma cremosa de gengibre.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20drink%20Taik%C3%B4%20Passion%20Blue." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge gold">Mais Pedido</span>
+                  <h3 class="item-name">Sunset Praia do Canto</h3>
+                </div>
+                <span class="item-price">R$ 42</span>
+              </div>
+              <p class="item-ingredients">Vodka Ketel One Botanical, purê de frutas vermelhas frescas, licor de cassis, redução de tangerina e tônica premium.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20drink%20Sunset%20Praia%20do%20Canto." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge">Exclusivo</span>
+                  <h3 class="item-name">Smoked Penicillin Taikô</h3>
+                </div>
+                <span class="item-price">R$ 48</span>
+              </div>
+              <p class="item-ingredients">Scotch Whisky Black Label, infusão de mel de cacau local, suco fresco de gengibre, limão tahiti e fumaça de canela aromática.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Smoked%20Penicillin%20Taik%C3%B4." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge gold">Refrescante</span>
+                  <h3 class="item-name">Spicy Tropical Mule</h3>
+                </div>
+                <span class="item-price">R$ 39</span>
+              </div>
+              <p class="item-ingredients">Vodka Cîroc Mango, cordial picante de abacaxi com pimenta dedo-de-moça, limão e espuma aveludada de gengibre.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Spicy%20Tropical%20Mule." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Category: CLÁSSICOS -->
+        <div class="menu-category-group" data-category="classicos">
+          <div class="cat-heading-row">
+            <h2 class="cat-heading-title">CLÁSSICOS DA COQUETELARIA</h2>
+            <span class="cat-heading-sub">As receitas imortais preparadas com destilados nobres</span>
+          </div>
+
+          <div class="menu-grid">
+            
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <h3 class="item-name">Gin Tônica Premium</h3>
+                </div>
+                <span class="item-price">R$ 42</span>
+              </div>
+              <p class="item-ingredients">Gin Tanqueray No. TEN ou Hendrick's, água tônica Fever-Tree, lâminas de pepino e zimbro tostado.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20Gin%20T%C3%B4nica%20Premium." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <h3 class="item-name">Aperol Spritz Veneziano</h3>
+                </div>
+                <span class="item-price">R$ 38</span>
+              </div>
+              <p class="item-ingredients">Aperol italiano, espumante Chandon Brut, club soda e fatia de laranja bahia.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20Aperol%20Spritz." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <h3 class="item-name">Negroni Clássico</h3>
+                </div>
+                <span class="item-price">R$ 40</span>
+              </div>
+              <p class="item-ingredients">Gin Tanqueray, Campari Bitter, Vermute Carpano Rosso e twist de laranja bahia.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20Negroni." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <h3 class="item-name">Moscow Mule Original</h3>
+                </div>
+                <span class="item-price">R$ 38</span>
+              </div>
+              <p class="item-ingredients">Vodka Ketel One, suco de limão tahiti, cerveja de gengibre artesanal e espuma cítrica na caneca de cobre.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20Moscow%20Mule." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Category: GARRAFAS & CHAMPAGNES -->
+        <div class="menu-category-group" data-category="garrafas">
+          <div class="cat-heading-row">
+            <h2 class="cat-heading-title">GARRAFAS & CHAMPAGNES VIP</h2>
+            <span class="cat-heading-sub">Serviço de garrafa com balde iluminado e acompanhamentos</span>
+          </div>
+
+          <div class="menu-grid">
+            
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge gold">Prestige</span>
+                  <h3 class="item-name">Veuve Clicquot Brut</h3>
+                </div>
+                <span class="item-price">R$ 590</span>
+              </div>
+              <p class="item-ingredients">Champagne francês clássico. Acompanha balde de gelo de acrílico iluminado e taças de cristal.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20garrafa%20de%20Veuve%20Clicquot." target="_blank" rel="noopener noreferrer" class="btn-item-order">Reservar Garrafa</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge">VIP</span>
+                  <h3 class="item-name">Gin Tanqueray No. TEN</h3>
+                </div>
+                <span class="item-price">R$ 480</span>
+              </div>
+              <p class="item-ingredients">Garrafa 750ml. Acompanha 6 energéticos Red Bull ou 6 tônicas premium + guarnições botânicas.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20garrafa%20de%20Tanqueray%20No.%20TEN." target="_blank" rel="noopener noreferrer" class="btn-item-order">Reservar Garrafa</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge">Ultra Premium</span>
+                  <h3 class="item-name">Vodka Cîroc / Grey Goose</h3>
+                </div>
+                <span class="item-price">R$ 490</span>
+              </div>
+              <p class="item-ingredients">Garrafa 750ml. Acompanha 6 latas de Red Bull Energy Drink (tradicional, sugarfree ou tropical).</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20garrafa%20de%20C%C3%AEroc/Grey%20Goose." target="_blank" rel="noopener noreferrer" class="btn-item-order">Reservar Garrafa</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge gold">Luxo</span>
+                  <h3 class="item-name">Whisky Johnnie Walker Gold Reserve</h3>
+                </div>
+                <span class="item-price">R$ 560</span>
+              </div>
+              <p class="item-ingredients">Garrafa 750ml. Blend cremoso de maltes raros. Acompanha 4 águas de coco ou 6 gelos de água de coco artesanais.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20Gold%20Label%20Reserve." target="_blank" rel="noopener noreferrer" class="btn-item-order">Reservar Garrafa</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Category: PETISCOS & ENTRADAS -->
+        <div class="menu-category-group" data-category="petiscos">
+          <div class="cat-heading-row">
+            <h2 class="cat-heading-title">PETISCOS & ALTA GASTRONOMIA DE LOUNGE</h2>
+            <span class="cat-heading-sub">Porções contemporâneas pensadas para compartilhar</span>
+          </div>
+
+          <div class="menu-grid">
+            
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge signature">Chef's Pick</span>
+                  <h3 class="item-name">Ceviche Tropical de Peixe Branco</h3>
+                </div>
+                <span class="item-price">R$ 58</span>
+              </div>
+              <p class="item-ingredients">Cubos de robalo fresco marinados no leite de tigre com tangerina, cebola roxa crocante, milho tostado e chips de banana-da-terra.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Ceviche%20Tropical." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge gold">Exclusivo</span>
+                  <h3 class="item-name">Camarões Crocantes ao Teriyaki</h3>
+                </div>
+                <span class="item-price">R$ 74</span>
+              </div>
+              <p class="item-ingredients">Camarões VM empanados na farinha panko japonesa, servidos com molho teriyaki artesanal e aioli de wasabi suave.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20os%20Camar%C3%B5es%20Crocantes." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <h3 class="item-name">Carpaccio de Polvo Trufado</h3>
+                </div>
+                <span class="item-price">R$ 68</span>
+              </div>
+              <p class="item-ingredients">Lâminas finíssimas de polvo cozido no ponto perfeito, azeite trufado, flor de sal, raspas de limão siciliano e torradas de ciabatta.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Carpaccio%20de%20Polvo." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <h3 class="item-name">Tábua de Frios Nobres & Queijos</h3>
+                </div>
+                <span class="item-price">R$ 82</span>
+              </div>
+              <p class="item-ingredients">Presunto cru Parma, salame italiano curado, queijo brie com mel trufado, gorgonzola doce, damascos, castanhas e foccacia quentinha.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20a%20T%C3%A1bua%20de%20Frios%20Nobres." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <h3 class="item-name">Dadinhos de Tapioca com Queijo Coalho</h3>
+                </div>
+                <span class="item-price">R$ 38</span>
+              </div>
+              <p class="item-ingredients">Dadinhos dourados e crocantes por fora, macios por dentro, acompanhados de geleia de pimenta defumada com cachaça artesanal.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20os%20Dadinhos%20de%20Tapioca." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge gold">Favorito</span>
+                  <h3 class="item-name">Trio Mini Burgers de Picanha</h3>
+                </div>
+                <span class="item-price">R$ 52</span>
+              </div>
+              <p class="item-ingredients">3 mini hambúrgueres artesanais de picanha no pão brioche amanteigado, queijo cheddar inglês derretido, bacon caramelizado e maionese trufada.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Trio%20Mini%20Burgers." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Category: SOBREMESAS -->
+        <div class="menu-category-group" data-category="sobremesas">
+          <div class="cat-heading-row">
+            <h2 class="cat-heading-title">SOBREMESAS</h2>
+            <span class="cat-heading-sub">Para finalizar com doçura e sofisticação</span>
+          </div>
+
+          <div class="menu-grid">
+            
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <span class="item-badge gold">Especial</span>
+                  <h3 class="item-name">Petit Gâteau de Pistache</h3>
+                </div>
+                <span class="item-price">R$ 36</span>
+              </div>
+              <p class="item-ingredients">Bolo quente com coração cremoso de pistache siciliano, servido com sorvete artesanal de baunilha de Madagascar e praliné de nozes.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20o%20Petit%20G%C3%A2teau." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="menu-item-card vidralitico-glass" data-animate="fade-up">
+              <div class="item-header-row">
+                <div class="item-title-box">
+                  <h3 class="item-name">Churros Espanhóis Gourmet</h3>
+                </div>
+                <span class="item-price">R$ 32</span>
+              </div>
+              <p class="item-ingredients">Churros crocantes polvilhados com canela e açúcar demerara, servidos com dip duplo de doce de leite argentino e ganache de chocolate 70%.</p>
+              <div class="item-footer-action">
+                <a href="https://wa.me/5527995019111?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20os%20Churros%20Gourmet." target="_blank" rel="noopener noreferrer" class="btn-item-order">Pedir via WhatsApp</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Transição Visual Entre Seções -->
+    <div class="section-divider-flow">
+      <div class="divider-line"></div>
+      <div class="divider-diamond"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Bottom Action CTA -->
+    <section class="cardapio-cta-bottom" data-animate="fade-up">
+      <div class="container text-center">
+        <h3 class="cardapio-cta-title">VIVA ESSA EXPERIÊNCIA NO TAIKÔ</h3>
+        <p class="cardapio-cta-desc">Reserve seu camarote ou mesa para garantir atendimento com garçom exclusivo e os melhores drinks da Praia do Canto.</p>
+        <div class="hero-actions" style="justify-content: center; margin-top: 24px;">
+          <a href="https://wa.me/5527995019111?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!%20Gostaria%20de%20reservar%20uma%20mesa/camarote." target="_blank" rel="noopener noreferrer" class="btn-solid-blue">
+            Falar com Concierge no WhatsApp (27) 99501-9111
+          </a>
+          <a href="index.html#agenda" class="btn-outline-gold">Ver Programação Semanal</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div class="footer-info-block">
+          <div class="footer-address">
+            <div class="palm-logo-wrap" style="width: 28px; height: 28px;">
+              <img src="assets/images/logo-palm-gold.png" alt="Taikô Beach Club" class="brand-logo-img">
+            </div>
+            <span>Rua Joaquim Lírio, 820 - Praia do Canto, Vitória - ES (Em frente ao Caza Brava)</span>
+          </div>
+          <div class="footer-meta-inline">
+            <span class="meta-pill"><strong>Funcionamento:</strong> Quinta a Segunda</span>
+            <span class="meta-pill"><strong>Classificação:</strong> 18 anos</span>
+            <a href="https://www.instagram.com/taikobeachclub?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="meta-pill meta-link-insta">
+              <strong>Instagram:</strong> @taikobeachclub
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-actions-block">
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Lirio+820+Praia+do+Canto+Vitoria+ES" target="_blank" rel="noopener noreferrer" class="btn-footer-maps">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            Google Maps
+          </a>
+          <a href="https://wa.me/5527995019111?text=Ol%C3%A1%20Taik%C3%B4%20Beach%20Club!" target="_blank" rel="noopener noreferrer" class="btn-footer-whatsapp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            (27) 99501-9111
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-brand-mini">
+          <div class="palm-logo-wrap" style="width: 22px; height: 22px;">
+            <img src="assets/images/logo-palm-gold.png" alt="Taikô Beach Club" class="brand-logo-img">
+          </div>
+          <span>TAIKÔ BEACH CLUB • VITÓRIA / ES • TODOS OS DIREITOS RESERVADOS</span>
+        </div>
+        <div class="footer-extra-links">
+          <a href="index.html" style="color: var(--accent-gold); margin-right: 16px;">Voltar ao Início</a>
+          <a href="https://www.instagram.com/taikobeachclub?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@taikobeachclub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // Category Filtering for Cardápio
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.cat-pill-btn');
+      const categoryGroups = document.querySelectorAll('.menu-category-group');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+
+          categoryGroups.forEach(group => {
+            if (filter === 'all' || group.getAttribute('data-category') === filter) {
+              group.style.display = 'block';
+            } else {
+              group.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

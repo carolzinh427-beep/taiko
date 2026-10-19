@@ -1,16 +1,17 @@
 /* ==========================================================================
    TAIKÔ BEACH CLUB - APPLICATION SCRIPT
-   Responsive Single-Site Engine (Desktop & Mobile)
+   Transitions, Mobile Vidralítico Drawer, VIP Modals & WhatsApp (5527995019111)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initModals();
   initSwipeTouchNavigation();
+  initScrollAnimations();
 });
 
 /**
- * Mobile Drawer Menu Handler
+ * Mobile Drawer Menu Handler (Vidralítico glassmorphism on top right)
  */
 function initMobileDrawer() {
   const menuBtn = document.getElementById('mobileMenuBtn');
@@ -42,7 +43,35 @@ function initMobileDrawer() {
 }
 
 /**
+ * Scroll Animations & Section Transitions (Intersection Observer)
+ */
+function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll('[data-animate]');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          // Optional: keep observing or unobserve once in view
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    animatedElements.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback if browser doesn't support IntersectionObserver
+    animatedElements.forEach((el) => el.classList.add('in-view'));
+  }
+}
+
+/**
  * Modal Dialog Handler for Guest List, Table Reservation & Birthdays
+ * Directs to official WhatsApp: 5527995019111
  */
 function initModals() {
   const modalOverlay = document.getElementById('modalOverlay');
@@ -54,9 +83,10 @@ function initModals() {
 
   // Open Modal function
   window.openBookingModal = function(type, defaultEventName = '') {
+    if (!modalOverlay) return;
     modalOverlay.classList.add('open');
-    modalFeedback.style.display = 'none';
-    modalForm.reset();
+    if (modalFeedback) modalFeedback.style.display = 'none';
+    if (modalForm) modalForm.reset();
 
     if (type === 'lista') {
       modalTitle.textContent = 'Nome na Lista VIP • Taikô';
@@ -69,7 +99,7 @@ function initModals() {
         }
       }
     } else if (type === 'mesa' || type === 'camarote') {
-      modalTitle.textContent = 'Reserva de Camarote & Mesa';
+      modalTitle.textContent = 'Reserva de Camarote & Lounge VIP';
     } else if (type === 'aniversario') {
       modalTitle.textContent = 'Comemore seu Aniversário VIP';
     } else {
@@ -79,7 +109,7 @@ function initModals() {
 
   // Close modal
   function closeModal() {
-    modalOverlay.classList.remove('open');
+    if (modalOverlay) modalOverlay.classList.remove('open');
   }
 
   if (modalClose) {
@@ -93,37 +123,42 @@ function initModals() {
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+    if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('open')) {
       closeModal();
     }
   });
 
-  // Handle Form Submission
+  // Handle Form Submission -> WhatsApp 5527995019111
   if (modalForm) {
     modalForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const guestName = document.getElementById('guestName')?.value || 'Convidado';
       const guestPhone = document.getElementById('guestPhone')?.value || '';
-      const selectedEvent = document.getElementById('eventSelect')?.value || 'Agenda Semanal';
+      const selectedEvent = document.getElementById('eventSelect')?.value || 'Atendimento Geral';
       const guestCount = document.getElementById('guestCount')?.value || '2';
+
+      // Official WhatsApp Number
+      const whatsappNumber = '5527995019111';
 
       // Send to WhatsApp directly with customized message
       const encodedMsg = encodeURIComponent(
         `Olá Taikô Beach Club! Gostaria de confirmar solicitação:\n\n` +
         `• Nome: ${guestName}\n` +
         `• WhatsApp: ${guestPhone}\n` +
-        `• Evento / Atração: ${selectedEvent}\n` +
+        `• Evento / Serviço: ${selectedEvent}\n` +
         `• Quantidade de Pessoas: ${guestCount}\n\n` +
         `Aguardo confirmação da equipe de concierge!`
       );
 
-      modalFeedback.style.display = 'block';
-      modalFeedback.textContent = `Solicitação registrada para ${guestName}! Redirecionando para o WhatsApp...`;
+      if (modalFeedback) {
+        modalFeedback.style.display = 'block';
+        modalFeedback.textContent = `Solicitação registrada para ${guestName}! Redirecionando para o WhatsApp...`;
+      }
 
       setTimeout(() => {
-        window.open(`https://wa.me/5527999887766?text=${encodedMsg}`, '_blank');
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMsg}`, '_blank');
         closeModal();
-      }, 1000);
+      }, 900);
     });
   }
 }
@@ -140,7 +175,6 @@ function initSwipeTouchNavigation() {
   let scrollLeft;
 
   track.addEventListener('mousedown', (e) => {
-    // Only apply drag if container is scrollable (e.g. mobile/tablet)
     if (track.scrollWidth <= track.clientWidth) return;
     isDown = true;
     track.style.cursor = 'grabbing';

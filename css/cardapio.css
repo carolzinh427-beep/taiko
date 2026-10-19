@@ -1,0 +1,283 @@
+/* ==========================================================================
+   CARDÁPIO EXCLUSIVO - TAIKÔ BEACH CLUB
+   Drinks Autorais & Petiscos Gourmet
+   ========================================================================== */
+
+.cardapio-hero {
+  padding: 80px 0 50px 0;
+  background-color: var(--bg-primary);
+  text-align: center;
+  position: relative;
+}
+
+.cardapio-badge {
+  display: inline-block;
+  background-color: rgba(255, 174, 25, 0.1);
+  border: 1px solid rgba(255, 174, 25, 0.3);
+  color: var(--color-amber-gold);
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.cardapio-main-title {
+  font-family: var(--font-aurora);
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.cardapio-subtitle {
+  font-family: var(--font-script);
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--color-amber-gold);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  text-shadow: 0 0 15px rgba(255, 174, 25, 0.5);
+}
+
+.cardapio-location-hint {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+}
+
+/* Category Filter Bar */
+.menu-categories-wrapper {
+  padding: 20px 0 40px 0;
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  background-color: rgba(8, 11, 17, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.category-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cat-pill-btn {
+  background-color: rgba(13, 20, 31, 0.7);
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+
+.cat-pill-btn:hover {
+  border-color: var(--accent-gold);
+  color: #FFFFFF;
+  background-color: rgba(213, 190, 158, 0.12);
+}
+
+.cat-pill-btn.active {
+  background-color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.4);
+}
+
+/* Menu Items Section */
+.menu-items-section {
+  padding: 50px 0 80px 0;
+  min-height: 60vh;
+}
+
+.menu-category-group {
+  margin-bottom: 60px;
+}
+
+.cat-heading-row {
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cat-heading-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.cat-heading-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.menu-item-card {
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(213, 190, 158, 0.35);
+}
+
+.item-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.item-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background-color: var(--border-medium);
+  color: var(--text-secondary);
+}
+
+.item-badge.signature {
+  background-color: rgba(0, 102, 255, 0.15);
+  border: 1px solid rgba(0, 102, 255, 0.4);
+  color: #38BDF8;
+}
+
+.item-badge.gold {
+  background-color: rgba(255, 174, 25, 0.15);
+  border: 1px solid rgba(255, 174, 25, 0.4);
+  color: var(--color-amber-gold);
+}
+
+.item-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.item-price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent-gold);
+  white-space: nowrap;
+}
+
+.item-ingredients {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.item-footer-action {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-item-order {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+}
+
+.btn-item-order:hover {
+  color: #FFFFFF;
+}
+
+.btn-item-order::after {
+  content: '→';
+  transition: transform 0.15s ease;
+}
+
+.btn-item-order:hover::after {
+  transform: translateX(3px);
+}
+
+/* Bottom CTA */
+.cardapio-cta-bottom {
+  padding: 80px 0;
+  background-color: var(--bg-surface);
+}
+
+.cardapio-cta-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.cardapio-cta-desc {
+  max-width: 620px;
+  margin: 12px auto 0 auto;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .category-filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .category-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .cat-pill-btn {
+    white-space: nowrap;
+  }
+}

@@ -1,45 +1,46 @@
-# TAIKÔ BEACH CLUB — Website Responsivo (Desktop & Mobile)
+# TAIKÔ BEACH CLUB — Website Oficial Responsivo (Vitória, ES)
 
-Website oficial responsivo do **TAIKÔ BEACH CLUB**, lounge de alta gastronomia e nightlife no Triângulo das Bermudas (Praia do Canto, Vitória - ES).
-
----
-
-## 🎨 Design System & Estética
-
-- **Tema Noturno**: `#080B11` e `#0A1118`
-- **Acentos Flat (Sem Degradês)**:
-  - **Champagne Gold**: `#D5BE9E` (Sofisticação refinada)
-  - **Electric Blue**: `#0066FF` (Energia noturna e ação)
-- **Zero Emojis & Zero Poluição**: Ícones minimalistas em SVG e diagramação limpa.
-- **Tipografia**:
-  - Títulos: **Syne** (Sans moderno e de alto impacto)
-  - Subtítulos: **Cormorant Garamond** (Serif fino e elegante)
-  - Corpo & Botões: **Plus Jakarta Sans** (Sans geométrico de alta legibilidade)
+Website oficial do **TAIKÔ BEACH CLUB**, lounge de alta gastronomia e nightlife na Praia do Canto, Vitória - ES.
 
 ---
 
-## 📱 Responsividade Completa (Site Único)
+## 🌴 Identidade Visual & Logotipo Oficial
 
-O site adapta-se perfeitamente de forma fluida de acordo com o dispositivo do usuário:
-
-### 💻 No Desktop
-- Barra de navegação com logotipo da palmeira **TAIKÔ**, links de navegação e botão *"Reservar Camarote"*.
-- Hero amplo com imagem cinematográfica do DJ e ambiente com luz azul, headline *"SUA NOVA EXPERIÊNCIA NO TRIÂNGULO"*, botão outline *"VER AGENDA SEMANAL"* e botão *"RESERVAR CAMAROTE"*.
-- Seção **AGENDA SEMANAL** disposta em 5 cards horizontais com botões *"Nome na Lista"* e *"Reservar Mesa"*.
-- Seção **RESERVAS & ANIVERSÁRIOS** em 2 colunas com fotos reais dos camarotes e aniversários VIP.
-- Rodapé completo com endereço, informações de funcionamento, classificação indicativa de 18 anos e botões de atalho para Google Maps e WhatsApp.
-
-### 📱 No Mobile
-- Cabeçalho compacto com logotipo e menu drawer lateral animado.
-- Hero adaptado com botões de toque confortáveis.
-- Seção **AGENDA SEMANAL** em carrossel horizontal com deslizamento por toque (swipe) e snap scrolling.
-- Seção **RESERVAS & ANIVERSÁRIOS** empilhada verticalmente.
-- Rodapé com botões de largura total para acesso rápido ao WhatsApp e GPS Google Maps.
+- **Logotipo Oficial**: Ilustração vetorial da palmeira oficial do Taikô integrada na barra de navegação e configurada como **Favicon** (`assets/images/logo-palm-gold.png`).
+- **Navbar Vidralítica (Glassmorphism)**: Efeito de vidro transparente com desfoque profundo (`backdrop-filter: blur(20px)`), presente na versão desktop e no botão superior direito na versão mobile.
+- **Hero Aurora Summit**: Composição com tipografia geométrica em caixa alta (`Syncopate` / `Orbitron`) e script cursivo em ouro âmbar (`Yellowtail` / `Style Script`), com ponto de brilho e iluminação atmosférica noturna.
 
 ---
 
-## 🚀 Deploy Vercel & GitHub
+## 🍸 Cardápio de Drinks & Petiscos (`cardapio.html`)
+
+Página exclusiva de gastronomia e coquetelaria:
+- **Drinks Autorais**: Criações exclusivas com Tanqueray, Ketel One, Cîroc e xaropes artesanais.
+- **Clássicos**: Gin Tônica, Aperol Spritz, Negroni e Moscow Mule.
+- **Garrafas & Champagnes VIP**: Veuve Clicquot, Dom Pérignon, Whiskeys e Gins importados.
+- **Petiscos & Alta Gastronomia de Lounge**: Ceviche de Peixe Branco, Camarões Crocantes ao Teriyaki, Carpaccio de Polvo trufado, Tábua de Frios Nobres e Mini Burgers de Picanha.
+- **Filtros Interativos**: Navegação por categorias em tempo real.
+- **Pedidos Rápidos**: Botões diretos para solicitação e reserva via WhatsApp.
+
+---
+
+## 📍 Integração Maps & Contatos Oficiais
+
+- **WhatsApp Oficial**: `+55 (27) 99501-9111` (integrado nos botões de CTA, reservas e modais).
+- **Instagram Oficial**: [@taikobeachclub](https://www.instagram.com/taikobeachclub?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==)
+- **Localização**: Rua Joaquim Lírio, 820 - Praia do Canto, Vitória - ES (Em frente ao Caza Brava) com **Google Maps interativo integrado**.
+
+---
+
+## ✨ Transições Entre Seções
+
+- Divisores visuais com diamante em ouro âmbar e linhas de fluxo luminoso.
+- Animações fluidas de revelação ao rolar a página (*Scroll Reveal* via `IntersectionObserver`).
+
+---
+
+## 🚀 Deploy & Repositório
 
 - **Repositório GitHub**: [carolzinh427-beep/taiko](https://github.com/carolzinh427-beep/taiko)
 - **Branch**: `main`
-- **Deploy**: O projeto é 100% estático (HTML/CSS/JS) com `vercel.json` configurado.
+- **Deploy Automático**: Vercel configurada via Git.

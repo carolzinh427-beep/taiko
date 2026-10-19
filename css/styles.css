@@ -3,8 +3,7 @@
 /* ==========================================================================
    TAIKÔ BEACH CLUB - HIGH-END NIGHTLIFE LOUNGE (VITÓRIA, ES)
    Theme: Dark (#080B11, #0A1118) | Champagne Gold (#D5BE9E) | Electric Blue (#0066FF)
-   Aesthetic: Ultra-clean, Flat Accents, No Emojis, No Clutter
-   Typography: Aurora Summit Style (Futuristic Sans + Cursive Script Overlay)
+   Aesthetic: Vidralítico Glassmorphism, Aurora Summit Typography, Flat Accents
    Fully Responsive (Desktop & Mobile Unified)
    ========================================================================== */
 
@@ -103,18 +102,30 @@ button {
   padding: 0 40px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* ==========================================================================
-   NAVIGATION BAR (RESPONSIVE HEADER)
+   VIDRALÍTICO GLASSMORPHISM (FUNDO TRANSPARENTE VIDRO)
+   ========================================================================== */
+.vidralitico-glass {
+  background-color: rgba(8, 11, 17, 0.62) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR (RESPONSIVE HEADER VIDRALÍTICO)
    ========================================================================== */
 .site-header {
-  background-color: rgba(8, 11, 17, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-subtle);
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: 16px 0;
+  padding: 14px 0;
+  transition: all 0.3s ease;
 }
 
 .header-inner {
@@ -129,17 +140,20 @@ button {
   gap: 12px;
 }
 
-.palm-icon {
-  width: 34px;
-  height: 34px;
+.palm-logo-wrap {
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.palm-icon svg {
+.brand-logo-img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
 }
 
 .brand-text-group {
@@ -175,7 +189,7 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
   list-style: none;
 }
 
@@ -194,18 +208,80 @@ button {
   color: var(--text-gold);
 }
 
+.nav-link.active {
+  color: #FFFFFF;
+}
+
+.nav-highlight-gold {
+  color: var(--accent-gold) !important;
+  font-weight: 700;
+}
+
+.nav-highlight-gold::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-gold);
+}
+
 .header-cta-group {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+}
+
+.social-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+  color: var(--accent-gold);
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+}
+
+.social-icon-btn:hover {
+  border-color: #E1306C;
+  color: #E1306C;
+  background-color: rgba(225, 48, 108, 0.12);
+  transform: translateY(-2px);
+}
+
+.header-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  color: #25D366;
+  background-color: rgba(37, 211, 102, 0.08);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.header-whatsapp-btn:hover {
+  background-color: #25D366;
+  color: #080B11;
+  border-color: #25D366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
 }
 
 .header-cta-btn {
   background-color: var(--accent-blue);
   color: #FFFFFF;
-  padding: 10px 22px;
+  padding: 9px 18px;
   border-radius: var(--radius-sm);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -225,8 +301,8 @@ button {
 }
 
 .mobile-menu-toggle svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   stroke: var(--text-primary);
 }
 
@@ -234,15 +310,12 @@ button {
 .mobile-drawer {
   display: none;
   position: fixed;
-  top: 67px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(8, 11, 17, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  z-index: 99;
-  padding: 32px 24px;
+  z-index: 2000;
+  padding: 24px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -251,26 +324,42 @@ button {
   display: flex;
 }
 
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-drawer-close {
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 24px;
+  padding: 6px;
+}
+
 .mobile-nav-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  margin: 24px 0;
 }
 
 .mobile-nav-link {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-primary);
   display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.mobile-nav-link:hover {
+.mobile-nav-link:hover, .mobile-link-highlight {
   color: var(--accent-gold);
 }
 
@@ -306,7 +395,7 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.46) contrast(1.24);
+  filter: brightness(0.44) contrast(1.24);
 }
 
 .hero-overlay-dark {
@@ -358,35 +447,10 @@ button {
   align-items: center;
 }
 
-.hero-badge-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: rgba(255, 174, 25, 0.1);
-  border: 1px solid rgba(255, 174, 25, 0.3);
-  color: var(--color-amber-gold);
-  padding: 6px 16px;
-  border-radius: var(--radius-sm);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.hero-badge-tag::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--accent-blue);
-  box-shadow: 0 0 10px var(--accent-blue);
-}
-
 /* Master Lockup (Aurora Summit Style) */
 .aurora-lockup-wrapper {
   position: relative;
-  margin: 10px 0 26px 0;
+  margin: 10px 0 24px 0;
   display: inline-block;
   user-select: none;
 }
@@ -470,7 +534,7 @@ button {
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .tagline-script {
@@ -479,15 +543,6 @@ button {
   color: var(--color-amber-gold);
   letter-spacing: 0.04em;
   text-shadow: 0 0 15px rgba(255, 174, 25, 0.6);
-}
-
-.tagline-bold {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: var(--text-primary);
-  text-transform: uppercase;
 }
 
 .hero-subtext {
@@ -503,16 +558,16 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-/* Flat UI Buttons (Strictly No Gradients) */
+/* Buttons */
 .btn-outline-gold {
   background-color: transparent;
   color: var(--accent-gold);
   border: 1.5px solid var(--accent-gold);
-  padding: 14px 30px;
+  padding: 13px 26px;
   border-radius: var(--radius-sm);
   font-size: 12px;
   font-weight: 700;
@@ -528,11 +583,32 @@ button {
   color: #080B11;
 }
 
+.btn-gold-cardapio {
+  background-color: rgba(213, 190, 158, 0.12);
+  color: var(--accent-gold);
+  border: 1.5px solid var(--accent-gold);
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(213, 190, 158, 0.2);
+}
+
+.btn-gold-cardapio:hover {
+  background-color: var(--accent-gold);
+  color: #080B11;
+}
+
 .btn-solid-blue {
   background-color: var(--accent-blue);
   color: #FFFFFF;
   border: 1.5px solid var(--accent-blue);
-  padding: 14px 32px;
+  padding: 13px 28px;
   border-radius: var(--radius-sm);
   font-size: 12px;
   font-weight: 700;
@@ -584,19 +660,61 @@ button {
 }
 
 /* ==========================================================================
-   SECTION: AGENDA SEMANAL (RESPONSIVE: 5 HORIZONTAL CARDS DESKTOP / SWIPE MOBILE)
+   TRANSIÇÕES ENTRE AS SEÇÕES (SECTION DIVIDERS & FLOW)
+   ========================================================================== */
+.section-divider-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(213, 190, 158, 0.25), transparent);
+}
+
+.divider-diamond {
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-amber-gold);
+  transform: rotate(45deg);
+  margin: 0 16px;
+  box-shadow: 0 0 10px rgba(255, 174, 25, 0.6);
+}
+
+/* Scroll-triggered reveal animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   SECTION: AGENDA SEMANAL
    ========================================================================== */
 .section-wrapper {
-  padding: 80px 0;
+  padding: 70px 0;
   background-color: var(--bg-surface);
-  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
 }
 
 .section-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 44px;
+  margin-bottom: 40px;
 }
 
 .section-label {
@@ -611,7 +729,7 @@ button {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 800;
   letter-spacing: 0.04em;
   color: var(--text-primary);
@@ -642,13 +760,13 @@ button {
   justify-content: space-between;
   min-height: 310px;
   position: relative;
-  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
 }
 
 .event-card:hover {
   background-color: var(--bg-card-hover);
-  border-color: var(--border-medium);
-  transform: translateY(-2px);
+  border-color: rgba(213, 190, 158, 0.3);
+  transform: translateY(-4px);
 }
 
 .event-card.featured {
@@ -723,7 +841,6 @@ button {
   margin-top: auto;
 }
 
-/* Mobile swipe hint */
 .mobile-swipe-instruction {
   display: none;
   align-items: center;
@@ -733,19 +850,13 @@ button {
   margin-bottom: 16px;
 }
 
-.mobile-swipe-instruction svg {
-  width: 14px;
-  height: 14px;
-  stroke: var(--accent-gold);
-}
-
 /* ==========================================================================
-   SECTION: RESERVAS & ANIVERSÁRIOS (2 COLUMNS DESKTOP / STACKED MOBILE)
+   SECTION: RESERVAS & ANIVERSÁRIOS
    ========================================================================== */
 .reservas-aniversarios-section {
   padding: 80px 0;
   background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
 }
 
 .cards-two-columns {
@@ -761,11 +872,12 @@ button {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .experience-card:hover {
-  border-color: var(--border-medium);
+  border-color: rgba(213, 190, 158, 0.35);
+  transform: translateY(-4px);
 }
 
 .exp-image-wrap {
@@ -784,7 +896,7 @@ button {
 }
 
 .experience-card:hover .exp-img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .exp-overlay-tag {
@@ -851,6 +963,153 @@ button {
 }
 
 /* ==========================================================================
+   SECTION: CARDÁPIO TEASER BANNER
+   ========================================================================== */
+.cardapio-teaser-section {
+  padding: 70px 0;
+  background-color: var(--bg-surface);
+}
+
+.teaser-glass-card {
+  padding: 44px 40px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.teaser-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  margin: 6px 0 10px 0;
+  text-transform: uppercase;
+}
+
+.teaser-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECTION: LOCALIZAÇÃO & GOOGLE MAPS
+   ========================================================================== */
+.location-section {
+  padding: 80px 0;
+  background-color: var(--bg-primary);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.location-details-box {
+  padding: 36px 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  justify-content: space-between;
+}
+
+.loc-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.loc-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(213, 190, 158, 0.1);
+  border: 1px solid rgba(213, 190, 158, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.loc-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--accent-gold);
+}
+
+.loc-label {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.loc-value {
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.loc-reference {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.location-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-footer-insta {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(225, 48, 108, 0.4);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-footer-insta:hover {
+  border-color: #E1306C;
+  color: #E1306C;
+  background-color: rgba(225, 48, 108, 0.12);
+}
+
+.maps-wrapper-box {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 400px;
+  position: relative;
+}
+
+.maps-wrapper-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: invert(90%) hue-rotate(180deg) contrast(1.1) brightness(0.9);
+}
+
+/* ==========================================================================
    FOOTER (RODAPÉ)
    ========================================================================== */
 .site-footer {
@@ -880,16 +1139,8 @@ button {
   font-weight: 500;
   line-height: 1.5;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
-}
-
-.footer-address svg {
-  width: 20px;
-  height: 20px;
-  stroke: var(--accent-gold);
-  flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .footer-meta-inline {
@@ -916,11 +1167,20 @@ button {
   font-weight: 700;
 }
 
+.meta-link-insta {
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.meta-link-insta:hover {
+  border-color: #E1306C;
+  color: #E1306C;
+}
+
 .footer-actions-block {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -949,7 +1209,7 @@ button {
   background-color: var(--accent-blue);
   color: #FFFFFF;
   border: 1.5px solid var(--accent-blue);
-  padding: 13px 26px;
+  padding: 13px 24px;
   border-radius: var(--radius-sm);
   font-size: 12px;
   font-weight: 700;
@@ -980,23 +1240,30 @@ button {
   gap: 10px;
 }
 
+.footer-extra-links a {
+  transition: color 0.15s ease;
+}
+.footer-extra-links a:hover {
+  color: #FFFFFF;
+}
+
 /* ==========================================================================
-   INTERACTIVE MODAL DIALOGS (VIP LIST, RESERVAS, ANIVERSÁRIOS)
+   MODAL DIALOG
    ========================================================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
   background-color: rgba(4, 6, 9, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 2000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2500;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.25s ease;
 }
 
 .modal-overlay.open {
@@ -1005,12 +1272,9 @@ button {
 }
 
 .modal-box {
-  background-color: var(--bg-surface-elevated);
-  border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1096,14 +1360,19 @@ button {
 /* ==========================================================================
    RESPONSIVE BREAKPOINTS (DESKTOP -> TABLET -> MOBILE)
    ========================================================================== */
-
-/* Tablet & Smaller Laptops */
 @media (max-width: 1200px) {
   .agenda-cards-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .hero-title {
-    font-size: 48px;
+}
+
+@media (max-width: 992px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+  .teaser-glass-card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -1117,8 +1386,22 @@ button {
     display: none;
   }
 
-  .mobile-menu-toggle {
+  /* Mobile Navbar: Top Right Glassmorphic Toggle */
+  .mobile-menu-toggle.vidralitico-btn {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 14px;
+    right: 18px;
+    z-index: 1001;
+    background-color: rgba(10, 17, 24, 0.65) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(213, 190, 158, 0.35) !important;
+    border-radius: var(--radius-sm);
+    padding: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   }
 
   /* Hero Mobile */
@@ -1145,9 +1428,6 @@ button {
   .tagline-script {
     font-size: 22px;
   }
-  .tagline-bold {
-    font-size: 16px;
-  }
   .hero-subtext {
     font-size: 13px;
     letter-spacing: 0.14em;
@@ -1158,7 +1438,7 @@ button {
     width: 100%;
     gap: 12px;
   }
-  .btn-outline-gold, .btn-solid-blue {
+  .btn-outline-gold, .btn-gold-cardapio, .btn-solid-blue {
     width: 100%;
     text-align: center;
     padding: 13px 20px;
