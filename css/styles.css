@@ -275,8 +275,8 @@ button {
 }
 
 .header-cta-btn {
-  background-color: var(--accent-blue);
-  color: #FFFFFF;
+  background-color: var(--accent-gold);
+  color: #080B11;
   padding: 9px 18px;
   border-radius: var(--radius-sm);
   font-size: 11px;
@@ -286,7 +286,8 @@ button {
 }
 
 .header-cta-btn:hover {
-  background-color: var(--accent-blue-hover);
+  background-color: var(--accent-gold-hover);
+  color: #080B11;
 }
 
 /* Mobile Hamburger Toggle */
@@ -606,9 +607,9 @@ button {
 }
 
 .btn-solid-blue {
-  background-color: var(--accent-blue);
-  color: #FFFFFF;
-  border: 1.5px solid var(--accent-blue);
+  background-color: var(--accent-gold);
+  color: #080B11;
+  border: 1.5px solid var(--accent-gold);
   padding: 13px 28px;
   border-radius: var(--radius-sm);
   font-size: 12px;
@@ -621,8 +622,9 @@ button {
 }
 
 .btn-solid-blue:hover {
-  background-color: var(--accent-blue-hover);
-  border-color: var(--accent-blue-hover);
+  background-color: var(--accent-gold-hover);
+  border-color: var(--accent-gold-hover);
+  color: #080B11;
 }
 
 .btn-outline-subtle {
@@ -645,8 +647,9 @@ button {
 }
 
 .btn-blue-sm {
-  background-color: var(--accent-blue);
-  color: #FFFFFF;
+  background-color: var(--accent-gold);
+  color: #080B11;
+  border: 1px solid var(--accent-gold);
   padding: 10px 16px;
   border-radius: var(--radius-sm);
   font-size: 11px;
@@ -657,7 +660,9 @@ button {
 }
 
 .btn-blue-sm:hover {
-  background-color: var(--accent-blue-hover);
+  background-color: var(--accent-gold-hover);
+  border-color: var(--accent-gold-hover);
+  color: #080B11;
 }
 
 /* ==========================================================================
@@ -1275,9 +1280,9 @@ button {
 }
 
 .btn-footer-whatsapp {
-  background-color: var(--accent-blue);
-  color: #FFFFFF;
-  border: 1.5px solid var(--accent-blue);
+  background-color: var(--accent-gold);
+  color: #080B11;
+  border: 1.5px solid var(--accent-gold);
   padding: 11px 20px;
   border-radius: var(--radius-sm);
   font-size: 11px;
@@ -1290,8 +1295,9 @@ button {
 }
 
 .btn-footer-whatsapp:hover {
-  background-color: var(--accent-blue-hover);
-  border-color: var(--accent-blue-hover);
+  background-color: var(--accent-gold-hover);
+  border-color: var(--accent-gold-hover);
+  color: #080B11;
 }
 
 .footer-bottom-row {
