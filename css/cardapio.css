@@ -266,10 +266,19 @@
 
 @media (max-width: 768px) {
   body {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .menu-items-section .container,
+  .cardapio-cta-bottom .container {
     padding-left: 0.5cm !important;
     padding-right: 0.5cm !important;
     box-sizing: border-box !important;
-    overflow-x: hidden !important;
+    width: 100% !important;
   }
 
   .menu-grid {

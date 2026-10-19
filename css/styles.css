@@ -1456,27 +1456,61 @@ button {
 }
 
 /* ==========================================================================
-   MOBILE DEVICES (0,5 CM MARGEM INVISÍVEL & CENTRALIZAÇÃO)
+   MOBILE DEVICES (0,5 CM MARGEM INVISÍVEL APENAS NO CONTEÚDO)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* 0,5 cm de margem invisível nas bordas do celular para nada encostar */
+  /* Body 100% tela inteira sem bordas no hero ou rodapé */
   body {
-    padding-left: 0.5cm !important;
-    padding-right: 0.5cm !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
     box-sizing: border-box !important;
     overflow-x: hidden !important;
   }
 
-  .container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  /* Margem invisível de 0,5cm apenas nas seções de conteúdo para afastar letras e imagens das bordas */
+  .section-wrapper .container,
+  .reservas-aniversarios-section .container,
+  .cardapio-teaser-section .container,
+  .location-section .container {
+    padding-left: 0.5cm !important;
+    padding-right: 0.5cm !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero e Rodapé mantêm fundo de ponta a ponta (100% sangrado) sem a margem de 0,5cm */
+  .hero-section {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero-container-center {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .site-footer {
+    width: 100% !important;
+  }
+
+  .site-footer .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
   }
 
   .site-header {
-    padding-left: 0.5cm !important;
-    padding-right: 0.5cm !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 100% !important;
   }
 
   .desktop-nav, .header-cta-group {
@@ -1490,7 +1524,7 @@ button {
     justify-content: center;
     position: fixed;
     top: 14px;
-    right: calc(0.5cm + 4px);
+    right: 18px;
     z-index: 1001;
     background-color: rgba(10, 17, 24, 0.65) !important;
     backdrop-filter: blur(14px) !important;
