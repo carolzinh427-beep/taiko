@@ -1,0 +1,19 @@
+{
+  "name": "taiko-beach-club",
+  "version": "1.0.0",
+  "description": "Professional Desktop and Mobile UI/UX Design Mockup for Taikô Beach Club, Vitória - ES",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "taiko",
+    "beach-club",
+    "vitoria",
+    "ui-ux",
+    "mockup",
+    "nightlife"
+  ],
+  "author": "Taikô Beach Club",
+  "license": "MIT"
+}
